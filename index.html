@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Radiance - A Flexible Web Application Environment for Common Lisp</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="description" content="The home page for Radiance, a web application environment for Common Lisp"/>
+    <meta name="robots" content="index, follow"/>
+  </head>
+  <body>
+    <header>
+      <h1><img src="logo.png" alt="Radiance"/></h1>
+      <span class="subtitle">A Flexible Web Application Environment for Common Lisp</span>
+    </header>
+    <main>
+      <article id="what">
+        <header>
+          <h2><a href="#what">What is Radiance?</a></h2>
+        </header>
+        <p>
+          Radiance is a web framework for Common Lisp with a focus on allowing you to run multiple applications together. However, it can be just as easily used for any kind of web-focused project. 
+        </p>
+      </article>
+      <article id="features">
+        <header>
+          <h2><a href="#features">Features</a></h2>
+        </header>
+        <p>
+          Stuff
+        </p>
+      </article>
+      <article id="start">
+        <header>
+          <h2><a href="#start">How to Get Started</a></h2>
+        </header>
+        <p>
+          If you're interested in using Radiance to develop your own applications, you will need a capable Common Lisp implementation and <a href="https://www.quicklisp.org/beta/">Quicklisp</a>. Installing Radiance requires adding a separate dist to Quicklisp, but remains nonetheless rather straight-forward:
+        </p>
+        <code>
+(<span class="func">ql-dist:install-dist</span> <span class="string">"http://dist.tymoon.eu/shirakumo.txt"</span>)<br/>
+(<span class="func">ql:quickload</span> <span class="keyword">:radiance</span>)
+        </code>
+        <p>
+          From there on out you can continue by reading through <a href="https://shirakumo.github.io/radiance/">Radiance's documentation</a> or jumping straight in with an <a href="https://github.com/Shirakumo/radiance-tutorial/blob/master/Part%200.md">in-depth tutorial</a> that walks you through all the steps of creating a fully-fledged web application.
+        </p>
+      </article>
+      <article id="deploy">
+        <header>
+          <h2><a href="#deploy">Deploying an Application</a></h2>
+        </header>
+        <p>
+          If you are instead interested in deploying an existing application that uses Radiance on one of your servers, you can take a short-cut that doesn't require you to set up a development environment. You can use Radiance's automatic bootstrapper to easily create a working setup. All you'll need is a capable Common Lisp implementation and a way to download a file.
+        </p>
+        <p>
+          On Linux using SBCL, it would look as follows:
+        </p>
+        <code>
+curl -O <a href="https://raw.githubusercontent.com/Shirakumo/radiance-bootstrap/master/bin/radiance-bootstrap.lisp">https://raw.githubusercontent.com/Shirakumo/radiance-bootstrap/master/bin/radiance-bootstrap.lisp</a><br/>
+sbcl --script radiance-bootstrap.lisp
+        </code>
+        <p>
+          The bootstrapper will take care of seting up a Radiance distribution for you.
+        </p>
+      </article>
+    </main>
+    <footer>
+      © 2016 <a href="https://shirakumo.org">Shirakumo.org</a>
+    </footer>
+  </body>
+</html>
