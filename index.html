@@ -27,8 +27,22 @@
           <h2><a href="#features">Features</a></h2>
         </header>
         <p>
-          Stuff
+          Radiance offers a number of features to help you develop applications. They're all mostly optional, but they're there to be used if you need them.
         </p>
+        <ul>
+          <li>A powerful and flexible routing system</li>
+          <li>Exchangeable backends for a variety of components</li>
+          <li>Easy to use REST API support</li>
+          <li>A variety of server backends</li>
+          <li>A database interface that supports both RDBMs and Object Stores</li>
+          <li>User objects</li>
+          <li>Extensible user profile pages</li>
+          <li>Client tracking through sessions</li>
+          <li>User authentication and registration</li>
+          <li>An extensible administration and settings panel</li>
+          <li>Simple resource caching</li>
+          <li>Resource access rate limiting</li>
+        </ul>
       </article>
       <article id="start">
         <header>
@@ -37,7 +51,7 @@
         <p>
           If you're interested in using Radiance to develop your own applications, you will need a capable Common Lisp implementation and <a href="https://www.quicklisp.org/beta/">Quicklisp</a>. Installing Radiance requires adding a separate dist to Quicklisp, but remains nonetheless rather straight-forward:
         </p>
-        <code>
+        <code class="block">
 (<span class="func">ql-dist:install-dist</span> <span class="string">"http://dist.tymoon.eu/shirakumo.txt"</span>)<br/>
 (<span class="func">ql:quickload</span> <span class="keyword">:radiance</span>)
         </code>
@@ -50,17 +64,20 @@
           <h2><a href="#deploy">Deploying an Existing Application</a></h2>
         </header>
         <p>
-          If you are instead interested in deploying an existing application that uses Radiance on one of your servers, you can take a short-cut that doesn't require you to set up a development environment. You can use Radiance's automatic bootstrapper to easily create a working setup. All you'll need is a capable Common Lisp implementation and a way to download a file.
+          If you are instead interested in deploying an existing application that uses Radiance on one of your servers, you can take a short-cut that doesn't require you to set up a development environment. You can use Radiance's automatic bootstrapper to easily create a working setup. All you'll need is a capable Common Lisp implementation.
         </p>
         <p>
-          On Linux using SBCL, it would look as follows:
+          On Linux using SBCL, starting the installation would look as follows:
         </p>
-        <code>
+        <code class="block">
 curl -O <a href="https://raw.githubusercontent.com/Shirakumo/radiance-bootstrap/master/bin/radiance-bootstrap.lisp">https://raw.githubusercontent.com/Shirakumo/radiance-bootstrap/master/bin/radiance-bootstrap.lisp</a><br/>
 sbcl --script radiance-bootstrap.lisp
         </code>
         <p>
-          The bootstrapper will take care of seting up a Radiance distribution for you.
+          The bootstrapper will take care of seting up a Radiance distribution for you in a directory of your choice. Once it is done, you can download and extract the source files of the applications you want to use to their own subdirectories in <code>modules/</code>. Then simply run the launcher file mentioned at the end of the bootstrap and you're all set.
+        </p>
+        <p>
+          You might also want to read <a href="https://github.com/Shirakumo/radiance-tutorial/blob/master/Part%207.md">Part 7</a> of the in-depth tutorial, which explains the setup process in a bit more detail.
         </p>
       </article>
     </main>
