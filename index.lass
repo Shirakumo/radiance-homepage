@@ -46,7 +46,7 @@
          :transition filter 2s)
     (* :z-index 10)
     :overflow hidden)
-   ("header:hover img"
+   (">header:hover img"
      :filter (blur 10px) (brightness 200%))
    (">header::before"
     :content ""
@@ -70,13 +70,13 @@
     (article
      :margin 0 auto 0 auto
      :max-width 800px
-     :text-align justify
      :padding 0 0 20px 0
      (header
-      :text-align left
       (h2 :font-size 2em :margin-bottom 0)
       (a :color (rgb 240 240 240))
       ("a:hover" :color (rgb 200 200 200)))
+     (p
+      :text-align justify)
      (code.block 
       :display block)
      (code
@@ -101,3 +101,16 @@
     :font-size 0.8em
     :text-align center
     :padding 20px)))
+
+(:media "(max-width: 800px)"
+        (body
+         :font-size 14pt
+         (>header
+          :padding-bottom 60px)
+         (">header:hover img"
+          :filter none)
+         (>main
+          :padding 5px
+          (article
+           (header
+            (h2 :font-size 1.5em))))))
